@@ -1,0 +1,10 @@
+<div class="chart-container">
+    <mat-form-field>
+         <mat-select (selectionChange)="updateChart($event.value)" placeholder="Filter">
+          @for (option of filterOptions; track option) {
+            <mat-option [value]="option">{{option}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    <canvas  id="ratioChart" >{{ chart }}</canvas>
+</div>

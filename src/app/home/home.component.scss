@@ -1,0 +1,84 @@
+.navigation-container {
+    min-width: 100vw;
+    min-height: 100vh;
+}
+.navigation-container-left-nav {
+    min-width: 100px;
+    width: 20%;
+    background: #1e2f47;
+
+    li {
+        margin: 25px 0;
+        cursor: pointer;
+        color: #fff;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            width: 20px;
+            height: 20px;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        &.dashboard::before {
+            background-image: url('/assets/dashboard_icon.png');
+        }
+
+        &.measurement::before {
+            background-image: url('/assets/measurement_icon.png');
+        }
+
+        &.company::before {
+            background-image: url('/assets/company_icon.png');
+        }
+
+        &.targets::before {
+            background-image: url('/assets/target_icon.png');
+        }
+
+        &.ratios::before {
+            background-image: url('/assets/ratios_icon.png');
+        }
+    }
+}
+
+.navigation-container-right-nav {
+    min-width: 200px;
+    width: 80%;
+    background: #fff;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.navigation-container-list {
+    list-style: none;
+}
+
+.navigation-container-logo {
+    background: url('/assets/logo.png') no-repeat;
+    width: 90px;
+    height: 40px;
+    background-size: contain;
+    margin: 10px auto;
+}
+
+.navbar {
+   flex-basis: 20%;
+    top: 0;
+    width: -webkit-fill-available;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 15px;
+    background: #ebeff5;
+    box-shadow: 0 0 7px #ccc;
+    color: #84878c;
+}
+
+.nav-content {
+    flex-basis: 80%;
+}

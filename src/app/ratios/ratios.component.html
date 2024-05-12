@@ -1,0 +1,58 @@
+<div class="ratio-container">
+    <div class="title">Ratios</div>
+    <div class="button-container">
+        <div class="add-year-btn"><button (click)="addYear()">Add year</button></div>
+        <div class="add-ratio-btn"><button (click)="addRatio()">Add Ratio</button></div>
+    </div>
+    
+    <div class="table-container">
+        <table mat-table [dataSource]="dataSource" class="ratio-data-table">
+            @for (column of displayedColumns; track column) {
+                <ng-container [matColumnDef]="column">
+                    <th mat-header-cell *matHeaderCellDef> {{column}} <span class="close-btn" (click)="removeColumn(column)"></span> </th>
+                    <td mat-cell *matCellDef="let element"> 
+                        @if(column == 'year') {
+                            <span class="edit-ratio" (click)="editRow(element)"></span>
+                         }
+                    {{element[column] || 0}} </td>
+                  </ng-container>
+            }          
+            <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+            <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+            </table>
+    </div>
+
+    <ng-template #openYearDialog>
+        <h2 matDialogTitle>Add Year</h2>
+        <mat-form-field>
+            <mat-label>Year</mat-label>
+            <mat-select [formControl]="yearControl">
+              <mat-option value="2024">2024</mat-option>
+              <mat-option value="2019">2019</mat-option>
+              <mat-option value="2018">2018</mat-option>
+            </mat-select>
+          </mat-form-field>
+        <mat-dialog-actions align="end">
+            <button mat-button matDialogClose>Cancel</button>
+            <button mat-button [matDialogClose]="yearControl.value">Save</button>
+        </mat-dialog-actions>
+    </ng-template>
+
+    <ng-template #openRatioDialog>
+        <h2 matDialogTitle>Add a new ratio</h2>
+        <mat-form-field>
+            <mat-label>Ratio</mat-label>
+            <mat-select [formControl]="ratioControl">
+              <mat-option value="revenue">Revenue</mat-option>
+              <mat-option value="floorspace">Floor Space</mat-option>
+              <mat-option value="fte">FTE</mat-option>
+            </mat-select>
+          </mat-form-field>
+        <mat-dialog-actions align="end">
+            <button mat-button matDialogClose>Cancel</button>
+            <button mat-button [matDialogClose]="ratioControl.value">Save</button>
+        </mat-dialog-actions>
+    </ng-template>
+
+    <app-chart> </app-chart>
+</div>

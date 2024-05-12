@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>Edit Ratios for {{ ratioData.year }}</h2>
+<mat-dialog-content>
+ <div *ngFor="let item of ratioData | keyvalue">
+      <mat-form-field floatLabel="always">
+        <mat-label>{{ item.key }}</mat-label>
+        <input
+          matInput
+          type="text"
+          [ngModel]="item.value"
+          (ngModelChange)="updateValue(item.key, $event)"
+        />
+      </mat-form-field>
+    </div>
+    <mat-dialog-actions>
+      <button mat-button [matDialogClose]="{cmd: 'delete', data: ratioData}">Delete</button>
+      <button mat-button matDialogClose>Cancel</button>
+      <button mat-button [matDialogClose]="{cmd: 'save',data: ratioData}">Save</button>
+    </mat-dialog-actions>
+</mat-dialog-content>

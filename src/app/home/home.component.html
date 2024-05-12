@@ -1,0 +1,20 @@
+<mat-sidenav-container class="navigation-container">
+    <mat-sidenav #sidenav mode="side" opened class="navigation-container-left-nav">
+        <div class="navigation-container-logo"></div>
+        <ul class="navigation-container-list">
+            <li class="dashboard" routerLink="/dashboard">Dashboard</li>
+            <li class="measurement" routerLink="/dashboard">Measurement</li>
+            <li class="targets" routerLink="/dashboard">Targets</li>
+            <li class="company" routerLink="/dashboard">Company</li>
+            <li class="ratios" routerLink="/ratios">Ratios</li>
+        </ul>
+    </mat-sidenav>
+    <mat-sidenav-content class="navigation-container-right-nav">
+        <div class="navbar">           
+            <div class="userName">Divya</div>
+        </div>
+        <div class="nav-content">
+            <router-outlet />
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

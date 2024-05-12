@@ -1,0 +1,70 @@
+.ratio-container {
+    width: 80%;
+    margin: 10px auto;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    color: #1e2f47;
+}
+
+.button-container {
+    display: flex;
+    gap: 5px;
+    margin: 10px 0;
+
+}
+
+button {
+    background: #4f6ea1;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+}
+
+.mat-mdc-form-field {
+    margin: 30px;
+}
+
+.mat-mdc-dialog-actions {
+    gap: 15px;
+}
+
+.mat-mdc-header-row {
+    background: #051630;
+    color: #fff;
+}
+
+.mat-mdc-table {
+    background: #fff;
+}  
+
+.mat-mdc-row {
+    color: #000;
+}
+
+.close-btn {
+    width: 10px;
+    height: 10px;
+    background: url('/assets/close_btn.png') no-repeat center;
+    background-size: contain;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.mat-column-year .close-btn {
+    display: none;
+}
+
+.edit-ratio {
+    width:15px;
+    height: 15px;
+    background: url('/assets/edit_btn.png') no-repeat center;
+    background-size: contain;
+    display: inline-block;
+    margin-right: 5px;
+    cursor: pointer;
+}
